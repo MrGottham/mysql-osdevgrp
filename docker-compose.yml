@@ -1,0 +1,14 @@
+version: '3'
+services:
+  mysql-osdevgrp:
+    build: .
+    image: mysql-osdevgrp:latest
+    container_name: mysql-osdevgrp
+    domainname: osdevgrp.local
+    hostname: mysql
+    network_mode: "bridge"
+    ports:
+      - "3306:3306"
+      - "33060:33060"
+    volumes:
+      - C:\Temp\MySQL:/var/lib/mysql
